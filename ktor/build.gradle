@@ -1,0 +1,10 @@
+dependencies {
+    compile "org.jetbrains.ktor:ktor-netty:$ktor_version"
+    compile "org.jetbrains.ktor:ktor-locations:$ktor_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile "ch.qos.logback:logback-classic:$logback_version"
+}
+
+apply plugin: 'application'
+mainClassName = 'org.jetbrains.ktor.netty.DevelopmentHost'
+

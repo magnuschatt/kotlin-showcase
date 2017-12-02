@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-showcase.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-showcase.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ktor.iml" filepath="$PROJECT_DIR$/.idea/modules/ktor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/language.iml" filepath="$PROJECT_DIR$/.idea/modules/language.iml" />
     </modules>
   </component>
 </project>

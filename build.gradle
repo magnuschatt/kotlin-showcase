@@ -1,6 +1,8 @@
+group 'chatt.kotlin-showcase'
+version '0.0.0'
 
 buildscript {
-    ext.kotlin_version = '1.1.50'
+    ext.kotlin_version = '1.2.0'
     ext.ktor_version = '0.4.0'
     ext.logback_version = '1.2.3'
 
@@ -13,22 +15,20 @@ buildscript {
     }
 }
 
-allprojects {
-    group 'chatt.kotlin-showcase'
-    version '0.0.0'
+apply plugin: 'idea'
+apply plugin: 'kotlin'
 
-    apply plugin: 'idea'
-    apply plugin: 'kotlin'
+repositories {
+    mavenCentral()
+}
 
-    repositories {
-        mavenCentral()
-        maven { url  "http://dl.bintray.com/kotlin/ktor" }
-        maven { url "https://dl.bintray.com/kotlin/kotlinx" }
-    }
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.19.3'
+}
 
-    kotlin {
-        experimental {
-            coroutines "enable"
-        }
+kotlin {
+    experimental {
+        coroutines "enable"
     }
 }

@@ -2,8 +2,7 @@ package chatt.showcase.kotlin
 
 import java.util.*
 
-class Frame(val title: String,
-            val fullscreen: Boolean) {
+class Frame(val title: String, val fullscreen: Boolean) {
 
     var width = 400
     var height = 300
@@ -11,8 +10,12 @@ class Frame(val title: String,
     val pixels: Int
         get() = height * width
 
-    fun printInfo() {
-        println(toString())
+    val factor: Double by lazy {
+        someCalculation()
+    }
+
+    private fun someCalculation(): Double {
+        return 3.42123 * 23213.23123
     }
 
 }

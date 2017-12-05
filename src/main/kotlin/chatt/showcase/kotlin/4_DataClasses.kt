@@ -1,3 +1,4 @@
+@file:Suppress("UNUSED_VARIABLE")
 package chatt.showcase.kotlin
 
 data class KotlinUser(var name: String,
@@ -5,8 +6,6 @@ data class KotlinUser(var name: String,
                       var email: String)
 
 
-
-@Suppress("UNUSED_VARIABLE")
 fun main(args: Array<String>) {
 
     val javaUser = JavaUser("Magnus", 27, "magnus@gmail.com")

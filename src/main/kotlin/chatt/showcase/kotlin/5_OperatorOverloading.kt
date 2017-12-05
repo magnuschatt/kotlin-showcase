@@ -1,5 +1,4 @@
 @file:Suppress("UNUSED_VARIABLE")
-
 package chatt.showcase.kotlin
 
 fun main(args: Array<String>) {
@@ -7,9 +6,8 @@ fun main(args: Array<String>) {
     val v1 = Vec2(4.0, 7.0)
     val v2 = Vec2(6.0, 23.0)
     val v3 = v1 - v2 + v1
-    println(v3)
 
-    val result = v1 dot v2
+    val dotProduct = v1 dot v2
 
 }
 

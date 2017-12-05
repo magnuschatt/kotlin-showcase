@@ -3,18 +3,28 @@ package chatt.showcase.kotlin
 import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.runBlocking
+import kotlin.system.measureNanoTime
 
 fun main(args: Array<String>) = runBlocking {
-    val inData = (1..1000000).toList()
 
-    val outData = inData.map { async { process(it) } }.map { it.await() }
+    val count = 1_000_000
+    val inData = (1..count).map { it.toLong() }
 
-    for (i in 0..20) {
-        println("${inData[i]} -> ${outData[i]}")
+    val time = measureNanoTime {
+
+        val outData = inData
+                .map { async { process(it) } }
+                .map { it.await() }
+
+        println("${inData[count - 1]} -> ${outData[count - 1]}")
     }
+
+    // if executed sequentially it would take over 27 hours
+    println("Seconds elapsed: ${time/1_000_000_000.0}")
 }
 
-suspend fun process(input: Int): Int {
+
+suspend fun process(input: Long): Long {
     delay(100)
     return input * input - input
 }

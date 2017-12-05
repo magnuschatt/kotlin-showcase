@@ -10,13 +10,22 @@ fun main(args: Array<String>) {
     val sum = { x: Int, y: Int -> x + y }
     val result = sum(10, 17)
 
+    fun printResult(x: Int, y: Int, lambda: (Int, Int) -> Int) {
+        println(lambda(x, y))
+    }
+
+    printResult(10, 4, sum)
+
+
+
 
 
     val list = listOf<String>()
-    val filtered1 = list.filter({ s: String -> s.length > 10 })
-    val filtered2 = list.filter({ s -> s.length > 10 })
-    val filtered3 = list.filter { s -> s.length > 10 }
-    val filtered4 = list.filter { it.length > 10 }
+    list.filter({ s: String -> s.length > 10 })
+
+
+
+
 
 
 
@@ -25,6 +34,9 @@ fun main(args: Array<String>) {
             .sortedBy { it.name }
             .map { it.email }
             .forEach { println(it) }
+
+
+
 
 
 
@@ -37,27 +49,30 @@ fun main(args: Array<String>) {
 
 
 
-    val frame = jFrame {
-        setLocationRelativeTo(null)
-        defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-    }
-
-    val frame2 = JFrame().apply {
-        setLocationRelativeTo(null)
-        defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-    }
-
-}
 
 
 
-fun jFrame(config: JFrame.() -> Unit): JFrame {
+
     val frame = JFrame()
-    frame.config()
-    return frame
+    frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+    frame.isResizable = true
+    frame.isVisible = true
+
+
+
+
+
+
+
+    fun getFile(path: String): File {
+        return File(path).apply { mkdirs() }
+    }
+
 }
 
-fun getFile(path: String): File {
-    return File(path).apply { mkdirs() }
-}
+
+
+
+
+
 

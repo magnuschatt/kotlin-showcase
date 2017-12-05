@@ -4,7 +4,7 @@ fun main(args: Array<String>) {
 
     val list = listOf("hello", "bob", "here", "we", "go")
 
-    for (str in list) {}
+    for (text in list) {}
 
     for (i in 1..10) {}
     for (i in 0 until 10) {}
